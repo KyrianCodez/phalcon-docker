@@ -25,6 +25,6 @@ curl -LO https://github.com/phalcon/cphalcon/archive/v${PHALCON_VERSION}.tar.gz 
     #install composer
     curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer && \
     php -m
-RUN  apt-get update && apt-get -y install git && apt-get -y autoremove git &&\ composer require phalcon\devtools 
+RUN  apt-get update && apt-get -y install git && apt-get -y autoremove git &&\ composer global require phalcon\devtools 
 COPY . .
 ENV WEB_DOCUMENT_ROOT=/var/www/html/application/public
