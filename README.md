@@ -12,13 +12,11 @@
  1. Clone git environment
  2. Within the IDE (vscode) , install the following extensions
 	 a. Docker
-	 b. Remote - containers
- 3. Run the command `
- 4. docker-compose up -d
- 5. Enter the command`Ctrl + shift + p` 
- 6. Type `Remote-containers: Attach to running container` this will open an IDE instance within the docker container. 
- 7. Code can be written within the IDE, and even pushed to the git repository. 
- 8. Site can be viewed using `phalcon serve`
- 9. All code/files/folders added in either the local repository or on the docker container will be synced making for easy file sharing between. 
- 10. Guide followed to help with phalcon-docker setup [medium article](https://medium.com/@rogsilva/working-with-phalcon-framework-and-docker-fef3fe5b85c8)
- 11. For more information on docker [docker documentation](https://docs.docker.com/)
+	 b. Dev Containers
+ 3. docker-compose up -d
+ 4. Enter the command`Ctrl + shift + p` 
+ 5. Type `Dev Containers: Attach to running container` this will open an IDE instance within the docker container. 
+ 6. Once this has been completed, a virtual link between the folder on your machine and the folder in the virtual machine is created. This means that any change to either folders will by synced unless set to be ignored by docker. 
+ 7. Navigate to localhost:8080 to see the phpinfo of the current set up
+ 8.  Guide followed to help with phalcon-docker setup [medium article](https://medium.com/@rogsilva/working-with-phalcon-framework-and-docker-fef3fe5b85c8)
+ 9.  For more information on docker [docker documentation](https://docs.docker.com/)
