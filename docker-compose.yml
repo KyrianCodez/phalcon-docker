@@ -1,6 +1,7 @@
 version: '3.9'
 
 services:
+
   app:
     container_name: app
     build: 
@@ -21,10 +22,22 @@ services:
   mysql:
     container_name: mysql
     image: mysql:8
+    restart: always
+    cap_add:
+      - SYS_NICE
     environment:
-      MYSQL_DATABASE: phalcon_app
-      MYSQL_ROOT_PASSWORD: root
-      SERVICE_TAGS: dev
-      SERVICE_NAME: mysql
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      SERVICE_TAGS: ${SERVICE_TAGS}
+      SERVICE_NAME: ${SERVICE_NAME}
     ports:
       - '3306:3306'
+    expose:
+      - '3306'
+    volumes:
+      - mysql:/var/lib/mysql
+volumes:
+  mysql:
+    driver: local
